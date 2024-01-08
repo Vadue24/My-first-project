@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: rgb(255, 238, 218);
+        }
+
+        .container {
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .container2 {
+            display: flex;
+            gap: 407px;
+        }
+
+        textarea,
+        input {
+            height: 450px;
+            padding: 10px;
+            font-size: 100px;
+        }
+
+        textarea {
+            width: 500px;
+            font-size: 18px;
+        }
+
+        #errorContainer {
+            position: fixed;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ff4d4d;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            transition: top 0.5s ease-in-out;
+        }
+
+        #errorContainer.show {
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container2">
+        <h2>Enter JSON data:</h2>
+        <h2>Formatted JSON data:</h2>
+    </div>
+    <div id="errorContainer" class="hidden">
+        <div id="errorMessage"></div>
+    </div>
+    <form>
+        <div class="container">
+            <textarea id="enterData" cols="10" rows="10">
+[{"id": 1, "name": "Mick", "age": 23},
+{"id": 2, "name": "John", "age": 26},
+{"id": 3, "name": "Sabina", "age": 140},
+{"id": 4, "name": "Katrina", "age": 23}]
+            </textarea>
+            <input type="submit" value="&#129170;">
+            <textarea id="formattedData" cols="30" rows="10"></textarea>
+        </div>
+    </form>
+    <script src="./main.js"></script>
+</body>
+
+</html>
